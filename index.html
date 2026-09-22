@@ -3,477 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rohit Kumar | Python AI & Full Stack Developer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-
-        :root {
-            --primary: #00f2fe;
-            --secondary: #4facfe;
-            --accent: #bd00ff;
-            --bg: #030712;
-        }
-
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: var(--bg);
-            color: #f3f4f6;
-            overflow-x: hidden;
-        }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .text-gradient {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .neon-border {
-            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
-        }
-
-        .card-hover:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: 0 10px 30px -10px rgba(0, 242, 254, 0.2);
-        }
-
-        #canvas-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            opacity: 0.4;
-        }
-
-        .custom-cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--primary);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease;
-        }
-
-        .blob {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            filter: blur(80px);
-            border-radius: 50%;
-            z-index: -1;
-            opacity: 0.15;
-            animation: move 20s infinite alternate;
-        }
-
-        @keyframes move {
-            from { transform: translate(-10%, -10%); }
-            to { transform: translate(20%, 20%); }
-        }
-
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
-    </style>
+    <title>Rohit Kumar | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="custom-cursor hidden md:block" id="cursor"></div>
-    <canvas id="canvas-bg"></canvas>
 
-    <!-- Nav -->
-    <nav class="fixed w-full z-50 glass border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="text-2xl font-bold tracking-tighter text-gradient">ROHIT.DEV</div>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
-                <a href="#home" class="hover:text-cyan-400 transition-colors">Home</a>
-                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
-                <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
-                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
-            </div>
-            <a href="mailto:im.rohit.kumar.078@gmail.com" class="px-5 py-2 glass rounded-full text-sm border-cyan-500/30 border text-cyan-400 hover:bg-cyan-500/10 transition-all">
-                Let's Talk
-            </a>
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <a href="#home" class="logo"><span>Rohit</span>.dev</a>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
         </div>
-    </nav>
+        <nav class="nav-links" id="nav-list">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    <!-- Hero -->
-    <section id="home" class="min-h-screen pt-32 pb-20 px-6 flex items-center relative overflow-hidden">
-        <div class="blob" style="top: 20%; left: 10%;"></div>
-        <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
-            <div data-aos="fade-right">
-                <h2 class="text-cyan-400 font-mono mb-4 flex items-center gap-2">
-                    <span class="w-8 h-[1px] bg-cyan-400"></span> Python AI Intern
-                </h2>
-                <h1 class="text-6xl md:text-8xl font-bold mb-6 leading-tight">
-                    Rohit <span class="text-gradient">Kumar</span>
-                </h1>
-                <p class="text-gray-400 text-lg md:text-xl max-w-lg mb-8 leading-relaxed">
-                    Motivated MCA graduate specializing in <span class="text-white">Django</span> and <span class="text-white">AI integration</span>. Building the bridge between robust backend systems and intelligent automation.
-                </p>
-                <div class="flex gap-4">
-                    <a href="#projects" class="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-semibold hover:shadow-lg hover:shadow-cyan-500/20 transition-all">
-                        View Projects
-                    </a>
-                    <div class="flex items-center gap-4 ml-4">
-                        <a href="https://www.linkedin.com/in/im-rohit-kumar/" class="p-3 glass rounded-lg hover:text-cyan-400 transition-colors"><i data-lucide="linkedin"></i></a>
-                        <a href="https://github.com/imrohit078" class="p-3 glass rounded-lg hover:text-cyan-400 transition-colors"><i data-lucide="github"></i></a>
-                    </div>
+    <!-- Hero Section -->
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="greeting">Hi there, I am</p>
+            <h1>Rohit Kumar</h1>
+            <h3>And I am a <span class="typing-text">Python Developer</span><span class="cursor">|</span></h3>
+            <p class="hero-desc">
+                MCA graduate with expertise in GenAI, Computer Vision, and scalable full-stack applications.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#projects" class="btn btn-secondary">View Work</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/imrohit078" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/im-rohit-kumar" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:im.rohit.kumar.078@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <!-- Right Side Tech Showcase Card -->
+        <div class="hero-card-container">
+            <div class="code-terminal">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">rohit_profile.py</span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="code-keyword">class</span> <span class="code-class">AIDeveloper</span>:</p>
+                    <p class="indent-1"><span class="code-keyword">def</span> <span class="code-func">__init__</span>(self):</p>
+                    <p class="indent-2">self.name = <span class="code-str">"Rohit Kumar"</span></p>
+                    <p class="indent-2">self.degree = <span class="code-str">"MCA (2025)"</span></p>
+                    <p class="indent-2">self.core = [<span class="code-str">"Python"</span>, <span class="code-str">"FastAPI"</span>, <span class="code-str">"PyTorch"</span>]</p>
+                    <p class="indent-2">self.focus = [<span class="code-str">"GenAI (RAG)"</span>, <span class="code-str">"Vision (YOLOv8)"</span>]</p>
+                    <p class="indent-1"><span class="code-keyword">def</span> <span class="code-func">status</span>(self):</p>
+                    <p class="indent-2"><span class="code-keyword">return</span> <span class="code-str">"Ready for impact 💻"</span></p>
                 </div>
             </div>
-            <div class="relative" data-aos="zoom-in" data-aos-delay="200">
-                <div class="w-full aspect-square glass rounded-3xl overflow-hidden relative p-8">
-                   <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent"></div>
-                   <div class="h-full border border-dashed border-white/10 rounded-2xl flex items-center justify-center">
-                        <!-- Anime style avatar placeholder -->
-                        <div class="text-center">
-                             <div class="w-32 h-32 rounded-full bg-cyan-950 border-4 border-cyan-500/30 mx-auto flex items-center justify-center mb-4">
-                                <i data-lucide="code-2" class="w-16 h-16 text-cyan-400"></i>
-                             </div>
-                             <p class="text-cyan-400 font-mono">system.status: active</p>
-                             <p class="text-xs text-gray-500 mt-2">Location: Himachal Pradesh, IN</p>
-                        </div>
-                   </div>
-                </div>
-                <!-- Floating badges -->
-                <div class="absolute -top-6 -right-6 glass p-4 rounded-xl border-cyan-500/50 border animate-bounce" style="animation-duration: 3s;">
-                    <i data-lucide="zap" class="text-yellow-400"></i>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-container">
+            <div class="about-card">
+                <p>
+                    MCA graduate and Python/AI Developer with hands-on expertise in Generative AI (RAG, LangChain, Local LLMs), Computer Vision (YOLOv8, OpenCV), and full-stack integration (FastAPI, Django, React.js). Proven track record of building and deploying production-grade AI pipelines, persistent vector stores, and Dockerized microservices.
+                </p>
+                <div class="info-grid">
+                    <div class="info-item"><i class="fas fa-map-marker-alt"></i> Una, Himachal Pradesh</div>
+                    <div class="info-item"><i class="fas fa-graduation-cap"></i> MCA (2025) - GNA University (CGPA: 8.12)</div>
+                    <div class="info-item"><i class="fas fa-envelope"></i> im.rohit.kumar.078@gmail.com</div>
+                    <div class="info-item"><i class="fas fa-phone-alt"></i> +91 9459948067</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-24 px-6 relative bg-white/0">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h3 class="text-3xl font-bold mb-4">Technical <span class="text-gradient">Arsenal</span></h3>
-                <div class="h-1 w-20 bg-cyan-500 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Python Card -->
-                <div class="glass p-8 rounded-2xl text-center card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="terminal" class="text-blue-400"></i>
-                    </div>
-                    <h4 class="font-bold mb-2">Python</h4>
-                    <p class="text-xs text-gray-500">Core Logic & AI</p>
-                </div>
-                <!-- Django -->
-                <div class="glass p-8 rounded-2xl text-center card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="layout" class="text-green-400"></i>
-                    </div>
-                    <h4 class="font-bold mb-2">Django</h4>
-                    <p class="text-xs text-gray-500">Web Framework</p>
-                </div>
-                <!-- MySQL -->
-                <div class="glass p-8 rounded-2xl text-center card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="database" class="text-orange-400"></i>
-                    </div>
-                    <h4 class="font-bold mb-2">MySQL</h4>
-                    <p class="text-xs text-gray-500">Relational DB</p>
-                </div>
-                <!-- AI -->
-                <div class="glass p-8 rounded-2xl text-center card-hover transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="cpu" class="text-purple-400"></i>
-                    </div>
-                    <h4 class="font-bold mb-2">YOLOv8 / DL</h4>
-                    <p class="text-xs text-gray-500">Computer Vision</p>
+    <section class="section bg-light" id="skills">
+        <h2 class="section-title">Technical <span>Skills</span></h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3><i class="fas fa-brain"></i> GenAI & LLMs</h3>
+                <div class="badge-container">
+                    <span class="badge">RAG</span>
+                    <span class="badge">LangChain</span>
+                    <span class="badge">ChromaDB</span>
+                    <span class="badge">Ollama (Llama 3)</span>
+                    <span class="badge">Vector DB</span>
+                    <span class="badge">Prompt Engineering</span>
                 </div>
             </div>
 
-            <!-- Soft Skills -->
-            <div class="mt-12 flex flex-wrap justify-center gap-4" data-aos="fade-up">
-                <span class="px-4 py-2 glass rounded-full text-sm border-white/5">Problem Solving</span>
-                <span class="px-4 py-2 glass rounded-full text-sm border-white/5">Team Collaboration</span>
-                <span class="px-4 py-2 glass rounded-full text-sm border-white/5">Time Management</span>
-                <span class="px-4 py-2 glass rounded-full text-sm border-white/5">Power BI</span>
-                <span class="px-4 py-2 glass rounded-full text-sm border-white/5">Postman</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Timeline -->
-    <section id="experience" class="py-24 px-6 bg-slate-900/30">
-        <div class="max-w-4xl mx-auto">
-            <div class="flex items-center gap-4 mb-12" data-aos="fade-right">
-                <i data-lucide="briefcase" class="text-cyan-400"></i>
-                <h3 class="text-3xl font-bold">Experience</h3>
+            <div class="skill-category">
+                <h3><i class="fas fa-eye"></i> AI & Computer Vision</h3>
+                <div class="badge-container">
+                    <span class="badge">YOLOv8</span>
+                    <span class="badge">OpenCV</span>
+                    <span class="badge">PyTorch</span>
+                    <span class="badge">TensorFlow</span>
+                    <span class="badge">CNNs</span>
+                    <span class="badge">Tesseract OCR</span>
+                    <span class="badge">Scikit-Learn</span>
+                </div>
             </div>
 
-            <div class="space-y-8">
-                <div class="relative pl-8 border-l-2 border-cyan-500/30" data-aos="fade-up">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyan-500 neon-border"></div>
-                    <div class="glass p-6 rounded-2xl">
-                        <div class="flex flex-wrap justify-between items-start mb-4">
-                            <div>
-                                <h4 class="text-xl font-bold">Python AI Intern</h4>
-                                <p class="text-cyan-400 font-medium">Excellence Technology</p>
-                            </div>
-                            <span class="text-sm bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full">Jan 2025 - June 2025</span>
-                        </div>
-                        <ul class="space-y-3 text-gray-400 text-sm">
-                            <li class="flex gap-2">
-                                <span class="text-cyan-400 mt-1">▹</span> 
-                                Built scalable web applications using Python and Django framework.
-                            </li>
-                            <li class="flex gap-2">
-                                <span class="text-cyan-400 mt-1">▹</span> 
-                                Integrated Deep Learning and YOLOv8 for real-time object detection systems.
-                            </li>
-                            <li class="flex gap-2">
-                                <span class="text-cyan-400 mt-1">▹</span> 
-                                Visualized data insights using Power BI and Tableau for decision making.
-                            </li>
-                        </ul>
-                    </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Frameworks & Web</h3>
+                <div class="badge-container">
+                    <span class="badge">Python</span>
+                    <span class="badge">FastAPI</span>
+                    <span class="badge">Django</span>
+                    <span class="badge">React.js</span>
+                    <span class="badge">RESTful APIs</span>
+                    <span class="badge">JavaScript</span>
+                    <span class="badge">Streamlit</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-server"></i> DevOps & Tools</h3>
+                <div class="badge-container">
+                    <span class="badge">Docker</span>
+                    <span class="badge">Docker Compose</span>
+                    <span class="badge">Git / GitHub</span>
+                    <span class="badge">Postman</span>
+                    <span class="badge">Linux</span>
+                    <span class="badge">MySQL</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Grid -->
-    <section id="projects" class="py-24 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-                <div data-aos="fade-right">
-                    <h3 class="text-3xl font-bold mb-2">Featured <span class="text-gradient">Projects</span></h3>
-                    <p class="text-gray-500">Deploying AI into real-world applications.</p>
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <h2 class="section-title">Key <span>Projects</span></h2>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fas fa-folder-open folder-icon"></i>
+                    <a href="https://github.com/imrohit078" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
-                <a href="https://github.com/imrohit078" class="text-cyan-400 hover:underline flex items-center gap-2" data-aos="fade-left">
-                    View GitHub <i data-lucide="external-link" class="w-4 h-4"></i>
-                </a>
+                <h3>Enterprise Offline RAG & Document Intelligence</h3>
+                <p>100% offline, privacy-compliant RAG system with zero data leakage using local Ollama (Llama 3) and LangChain. Engineered PDF chunking pipeline storing 768-dim embeddings in persistent ChromaDB with multi-turn conversational memory.</p>
+                <div class="tags">
+                    <span>FastAPI</span>
+                    <span>LangChain</span>
+                    <span>ChromaDB</span>
+                    <span>Ollama</span>
+                    <span>Docker</span>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- SmartCropCare -->
-                <div class="glass rounded-3xl overflow-hidden group card-hover transition-all" data-aos="fade-up">
-                    <div class="h-64 bg-gradient-to-br from-green-500/20 to-cyan-500/10 relative overflow-hidden flex items-center justify-center">
-                        <i data-lucide="leaf" class="w-20 h-20 text-green-400/30 group-hover:scale-110 transition-transform duration-500"></i>
-                        <div class="absolute bottom-4 left-6 flex gap-2">
-                            <span class="bg-black/50 backdrop-blur-md text-[10px] px-2 py-1 rounded-md uppercase tracking-widest text-white border border-white/10">Deep Learning</span>
-                            <span class="bg-black/50 backdrop-blur-md text-[10px] px-2 py-1 rounded-md uppercase tracking-widest text-white border border-white/10">Django</span>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h4 class="text-2xl font-bold mb-3">SmartCropCare</h4>
-                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                            AI-based web application to detect crop diseases from plant images. Integrated a location-based advisory system for personalized prevention tips.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="https://github.com/imrohit078/SmartCropCare" class="p-2 glass rounded-lg hover:text-cyan-400" target="_blank"><i data-lucide="github" class="w-5 h-5"></i></a>
-                            <a href="#" class="p-2 glass rounded-lg hover:text-cyan-400"><i data-lucide="link" class="w-5 h-5"></i></a>
-                        </div>
-                    </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fas fa-folder-open folder-icon"></i>
+                    <a href="https://github.com/imrohit078" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
+                <h3>Crop Disease Detection & Prevention</h3>
+                <p>Trained a deep CNN model achieving 94%+ validation accuracy across 20+ plant disease classes using TensorFlow. Built a geo-targeted advisory module providing location-based seasonal prevention tips and remedies.</p>
+                <div class="tags">
+                    <span>Python</span>
+                    <span>Django</span>
+                    <span>TensorFlow</span>
+                    <span>CNN</span>
+                    <span>MySQL</span>
+                </div>
+            </div>
 
-                <!-- Smart Parking -->
-                <div class="glass rounded-3xl overflow-hidden group card-hover transition-all" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-64 bg-gradient-to-br from-blue-500/20 to-purple-500/10 relative overflow-hidden flex items-center justify-center">
-                        <i data-lucide="car" class="w-20 h-20 text-blue-400/30 group-hover:scale-110 transition-transform duration-500"></i>
-                        <div class="absolute bottom-4 left-6 flex gap-2">
-                            <span class="bg-black/50 backdrop-blur-md text-[10px] px-2 py-1 rounded-md uppercase tracking-widest text-white border border-white/10">YOLOv8</span>
-                            <span class="bg-black/50 backdrop-blur-md text-[10px] px-2 py-1 rounded-md uppercase tracking-widest text-white border border-white/10">OCR</span>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h4 class="text-2xl font-bold mb-3">AI Parking System</h4>
-                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                            Full-cycle parking solution using computer vision for license plate recognition (LPR). Automated vehicle entry/exit logs with PDF receipt generation.
-                        </p>
-                        <div class="flex gap-4">
-                            <a href="https://github.com/imrohit078/Smart-Parking-System" class="p-2 glass rounded-lg hover:text-cyan-400" target="_blank"><i data-lucide="github" class="w-5 h-5"></i></a>
-                            <a href="#" class="p-2 glass rounded-lg hover:text-cyan-400"><i data-lucide="link" class="w-5 h-5"></i></a>
-                        </div>
-                    </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fas fa-folder-open folder-icon"></i>
+                    <a href="https://github.com/imrohit078" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+                <h3>Smart Parking System Using AI</h3>
+                <p>Architected an Automatic Number Plate Recognition (ANPR) pipeline using YOLOv8 and Tesseract OCR, reducing check-in latency by ~60%. Features RBAC employee authentication and automated dynamic PDF receipt generation.</p>
+                <div class="tags">
+                    <span>YOLOv8</span>
+                    <span>OpenCV</span>
+                    <span>OCR</span>
+                    <span>Django</span>
+                    <span>Python</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education -->
-    <section class="py-24 px-6 bg-slate-900/30">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-            <div data-aos="fade-right">
-                <h3 class="text-3xl font-bold mb-8 flex items-center gap-3">
-                    <i data-lucide="graduation-cap" class="text-cyan-400"></i> Education
-                </h3>
-                <div class="space-y-6">
-                    <div class="glass p-6 rounded-2xl border-l-4 border-cyan-500">
-                        <p class="text-xs text-cyan-400 font-mono mb-1">2023 - 2025</p>
-                        <h4 class="text-xl font-bold">MCA</h4>
-                        <p class="text-gray-400">GNA University, Phagwara</p>
-                        <p class="text-sm mt-2">CGPA: <span class="text-white">8.12</span></p>
-                    </div>
-                    <div class="glass p-6 rounded-2xl border-l-4 border-white/10">
-                        <p class="text-xs text-gray-500 font-mono mb-1">2020 - 2023</p>
-                        <h4 class="text-xl font-bold">B.Sc Information Technology</h4>
-                        <p class="text-gray-400">GNA University, Phagwara</p>
-                        <p class="text-sm mt-2">CGPA: <span class="text-white">7.22</span></p>
-                    </div>
+    <!-- Experience & Education Section -->
+    <section class="section bg-light" id="experience">
+        <h2 class="section-title">Experience & <span>Education</span></h2>
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Jan 2025 - June 2025</span>
+                    <h3>Python AI Intern</h3>
+                    <h4>Excellence Technology</h4>
+                    <p>Built robust web apps with Python/Django, developed computer vision detection modules using YOLOv8 and OpenCV, and built interactive reporting dashboards using Power BI and Tableau.</p>
                 </div>
             </div>
-            <div data-aos="fade-left">
-                <h3 class="text-3xl font-bold mb-8 flex items-center gap-3">
-                    <i data-lucide="languages" class="text-cyan-400"></i> Languages
-                </h3>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="glass p-6 rounded-2xl">
-                        <h4 class="font-bold text-lg mb-1">Hindi</h4>
-                        <p class="text-xs text-gray-400">Native Proficiency</p>
-                    </div>
-                    <div class="glass p-6 rounded-2xl">
-                        <h4 class="font-bold text-lg mb-1">English</h4>
-                        <p class="text-xs text-gray-400">Professional Working</p>
-                    </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2023 - 2025</span>
+                    <h3>Master of Computer Applications (MCA)</h3>
+                    <h4>GNA University, Phagwara</h4>
+                    <p>Secured 8.12 CGPA. Focus on Advanced Algorithms, Machine Learning, and Enterprise Software Systems.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2020 - 2023</span>
+                    <h3>Bachelor of Science - Information Technology</h3>
+                    <h4>GNA University, Phagwara</h4>
+                    <p>Secured 7.22 CGPA. Solid foundation in Computer Science fundamentals, DBMS, and Web Technologies.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 px-6 relative overflow-hidden">
-        <div class="blob" style="bottom: 0; right: 0;"></div>
-        <div class="max-w-4xl mx-auto text-center">
-            <div data-aos="zoom-in">
-                <h3 class="text-4xl font-bold mb-4 italic">Get In <span class="text-gradient">Touch</span></h3>
-                <p class="text-gray-400 mb-12">I am always open to discussing AI projects, collaborations, or internship opportunities.</p>
-                
-                <div class="grid md:grid-cols-3 gap-6 mb-12">
-                    <div class="glass p-6 rounded-2xl card-hover">
-                        <i data-lucide="phone" class="mx-auto mb-4 text-cyan-400"></i>
-                        <p class="text-sm text-gray-400 mb-1">Call</p>
-                        <p class="font-medium">+91 94******67</p>
-                    </div>
-                    <div class="glass p-6 rounded-2xl card-hover">
-                        <i data-lucide="mail" class="mx-auto mb-4 text-cyan-400"></i>
-                        <p class="text-sm text-gray-400 mb-1">Email</p>
-                        <p class="font-medium">im.rohit.kumar.078@gmail.com</p>
-                    </div>
-                    <div class="glass p-6 rounded-2xl card-hover">
-                        <i data-lucide="map-pin" class="mx-auto mb-4 text-cyan-400"></i>
-                        <p class="text-sm text-gray-400 mb-1">Location</p>
-                        <p class="font-medium">Himachal Pradesh</p>
-                    </div>
+     <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Let's collaborate!</h3>
+                <p>Feel free to reach out for job opportunities, project collaborations, or tech discussions.</p>
+                <div class="contact-detail">
+                    <i class="fas fa-envelope"></i>
+                    <span>im.rohit.kumar.078@gmail.com</span>
                 </div>
-
-                <a href="mailto:Kkr3854@gmail.com" class="inline-block px-12 py-5 bg-white text-black font-bold rounded-2xl hover:bg-cyan-400 hover:text-white transition-all transform hover:scale-105">
-                    Send a Message
-                </a>
+                <div class="contact-detail">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+91 9459948067</span>
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Una, Himachal Pradesh, India</span>
+                </div>
             </div>
+
+            <!-- Contact Form with Web3Forms -->
+            <form class="contact-form" id="contact-form">
+                <!-- APNI ACCESS KEY YAHAN PASTE KAR -->
+                <input type="hidden" name="access_key" value="29596c33-19fc-43cb-bbbc-3903be28af4b">
+                
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                
+                <button type="submit" id="submit-btn" class="btn btn-primary">Send Message</button>
+                <p id="form-result" style="margin-top: 10px; font-size: 0.95rem;"></p>
+            </form>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 text-center text-gray-500 text-sm">
-        <p>&copy; 2026 Rohit Kumar. Built with Passion & AI.</p>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Rohit Kumar. All Rights Reserved.</p>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
-        
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            once: true,
-            easing: 'ease-out-quad'
-        });
-
-        // Custom Cursor
-        const cursor = document.getElementById('cursor');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
-        });
-
-        // Particle Background Logic
-        const canvas = document.getElementById('canvas-bg');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-
-        function resize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-
-        window.addEventListener('resize', resize);
-        resize();
-
-        class Particle {
-            constructor() {
-                this.reset();
-            }
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.5;
-                this.speedX = Math.random() * 0.5 - 0.25;
-                this.speedY = Math.random() * 0.5 - 0.25;
-                this.life = Math.random() * 100;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-            }
-            draw() {
-                ctx.fillStyle = 'rgba(0, 242, 254, 0.3)';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        for (let i = 0; i < 80; i++) {
-            particles.push(new Particle());
-        }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-            requestAnimationFrame(animateParticles);
-        }
-        animateParticles();
-
-        // GSAP Animations
-        gsap.from("nav", {
-            y: -100,
-            opacity: 0,
-            duration: 1,
-            ease: "power4.out"
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <!-- Script File Link -->
+    <script src="script.js"></script>
 </body>
 </html>
