@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://web3forms.com/client/script.js" async defer></script>
 </head>
 <body>
 
@@ -265,14 +266,13 @@
 
             <!-- Contact Form with Web3Forms -->
             <form class="contact-form" id="contact-form">
-                <!-- APNI ACCESS KEY YAHAN PASTE KAR -->
                 <input type="hidden" name="access_key" value="29596c33-19fc-43cb-bbbc-3903be28af4b">
                 
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <input type="text" name="subject" placeholder="Subject" required>
                 <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                
+                <div class="h-captcha" data-captcha="true"></div>                
                 <button type="submit" id="submit-btn" class="btn btn-primary">Send Message</button>
                 <p id="form-result" style="margin-top: 10px; font-size: 0.95rem;"></p>
             </form>
