@@ -17,10 +17,10 @@ if (mobileMenu && navList) {
 
 // Typing Text Effect for Headers / Roles
 const roles = [
-    "Python Developer",
-    "AI & GenAI Engineer",
-    "Computer Vision Developer",
-    "Software Engineer"
+    "Generative AI & LLMs",
+    "Computer Vision & Deep Learning",
+    "Python & Backend Engineering",
+    "Full-Stack AI Applications"
 ];
 
 let roleIndex = 0;
@@ -112,3 +112,27 @@ if (contactForm) {
         }
     });
 }
+
+
+// Fetch latest commit date from GitHub
+async function fetchLastUpdated() {
+    const updateElement = document.getElementById('update-date');
+    if (!updateElement) return;
+
+    try {
+        const response = await fetch('https://api.github.com/repos/imrohit078/portfolio/commits/main');
+        if (response.ok) {
+            const data = await response.json();
+            const commitDate = new Date(data.commit.committer.date);
+            
+            const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            updateElement.textContent = commitDate.toLocaleDateString('en-US', options);
+        } else {
+            updateElement.textContent = 'Recently';
+        }
+    } catch (err) {
+        updateElement.textContent = 'Recently';
+    }
+}
+
+fetchLastUpdated();
