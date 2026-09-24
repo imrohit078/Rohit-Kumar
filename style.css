@@ -448,6 +448,7 @@ body {
     font-size: 1.25rem;
     margin-bottom: 0.8rem;
     color: var(--text-white);
+    min-height: 3.5rem;
 }
 
 .project-card p {
@@ -455,6 +456,7 @@ body {
     font-size: 0.92rem;
     line-height: 1.6;
     margin-bottom: 1.6rem;
+    flex-grow: 1;
 }
 
 .tags {
