@@ -103,6 +103,37 @@ body {
     margin-bottom: 1.4rem;
 }
 
+
+.hire-badge {
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: 1px solid rgba(52, 211, 153, 0.4);
+    background: rgba(16, 185, 129, 0.12);
+}
+
+.hire-badge strong {
+    color: #ffffff;
+    margin-left: 2px;
+}
+
+.badge-arrow {
+    font-size: 0.75rem;
+    margin-left: 4px;
+    transition: transform 0.2s ease;
+}
+
+.hire-badge:hover {
+    background: rgba(16, 185, 129, 0.22);
+    border-color: #34d399;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 211, 153, 0.2);
+}
+
+.hire-badge:hover .badge-arrow {
+    transform: translateX(3px);
+}
+
 .pulse-dot {
     width: 7px;
     height: 7px;
@@ -472,6 +503,70 @@ body {
     padding: 0.25rem 0.6rem;
     border-radius: 4px;
 }
+
+/* Hire Me CTA Section */
+.hire-cta-section {
+    padding: 2rem 8%;
+}
+
+.hire-cta-card {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(17, 23, 38, 0.95) 100%);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 16px;
+    padding: 2.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 0.8rem;
+}
+
+.hire-cta-content h2 {
+    font-size: 1.6rem;
+    color: var(--text-white);
+    margin-bottom: 0.4rem;
+}
+
+.hire-cta-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.hire-cta-actions {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 850px) {
+    .hire-cta-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+    .hire-cta-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    .hire-cta-actions .btn {
+        justify-content: center;
+    }
+}
+
 
 /* Experience Timeline */
 .timeline-container {
