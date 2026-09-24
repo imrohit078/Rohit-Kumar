@@ -586,28 +586,39 @@ body {
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 2.2rem 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.8rem 8%;
     background-color: #060910;
     border-top: 1px solid var(--border);
     color: var(--text-muted);
     font-size: 0.88rem;
 }
 
+footer p {
+    margin: 0;
+}
+
 .last-updated {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    margin-top: 0.4rem;
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 0.4rem;
+    font-size: 0.85rem;
 }
 
 .last-updated span {
     color: var(--primary);
 }
 
+/* Mobile Responsive: Chhoti screen par wapas center/column ho jaye */
+@media (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+    }
+}
 /* Responsive */
 @media (max-width: 900px) {
     .hero {
