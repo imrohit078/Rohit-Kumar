@@ -209,7 +209,6 @@ body {
 }
 
 
-/* Primary Button (Send Message / Action Button) */
 .btn-primary {
     background-color: #38bdf8 !important;
     color: #090d16 !important;
@@ -219,7 +218,6 @@ body {
     visibility: visible !important;
 }
 
-/* Hover karne par text aur background dono clearly dikhenge */
 .btn-primary:hover {
     background-color: #0ea5e9 !important;
     color: #ffffff !important;
@@ -227,7 +225,6 @@ body {
     box-shadow: 0 4px 15px rgba(56, 189, 248, 0.35);
 }
 
-/* Submit disabled state (jab sending chal raha ho) */
 .btn-primary:disabled {
     background-color: #1e293b !important;
     color: #94a3b8 !important;
@@ -444,13 +441,13 @@ body {
     border: 1px solid var(--border);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     transition: all 0.25s ease;
 }
 
 .project-card:hover {
     transform: translateY(-4px);
     border-color: #38bdf855;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
 }
 
 .project-header {
@@ -477,9 +474,45 @@ body {
 
 .project-card h3 {
     font-size: 1.25rem;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     color: var(--text-white);
     min-height: 3.5rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Bullet Highlights Styling */
+.project-highlights {
+   list-style: none;
+    padding: 0;
+    margin: 0 0 1.6rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-grow: 1;
+}
+
+.project-highlights li {
+   font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    position: relative;
+    padding-left: 1.5rem; 
+    text-align: left;
+    display: block;
+}
+
+.project-highlights li i {
+    position: absolute;
+    left: 0;
+    top: 0.22rem;         
+    color: var(--primary);
+    font-size: 0.85rem;
+}
+
+.project-highlights li strong {
+    color: var(--text-white);
+    font-weight: 600;
 }
 
 .project-card p {
@@ -487,6 +520,7 @@ body {
     font-size: 0.92rem;
     line-height: 1.6;
     margin-bottom: 1.6rem;
+    text-align: left;
     flex-grow: 1;
 }
 
@@ -494,15 +528,23 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-top: auto; 
 }
 
 .tags span {
     font-size: 0.78rem;
     color: var(--primary);
     background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.15);
     padding: 0.25rem 0.6rem;
     border-radius: 4px;
+    transition: background 0.2s ease;
 }
+
+.tags span:hover {
+    background: rgba(56, 189, 248, 0.16);
+}
+
 
 /* Hire Me CTA Section */
 .hire-cta-section {
@@ -663,6 +705,85 @@ body {
     gap: 1rem;
 }
 
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1.1rem;
+    color: var(--text-muted);
+}
+
+.contact-item i {
+    color: var(--primary);
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.email-copy-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.35rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    position: relative;
+}
+
+.email-link {
+    color: var(--text-white) !important;
+    text-decoration: none !important;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.email-link:hover {
+    color: var(--primary) !important;
+}
+
+/* Copy button */
+.copy-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    padding: 3px 5px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.copy-btn:hover {
+    color: var(--primary);
+    background: rgba(56, 189, 248, 0.12);
+}
+
+/* Tooltip */
+.copy-tooltip {
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0b1120;
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 3px 8px;
+    font-size: 0.72rem;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+}
+
+.copy-btn:hover .copy-tooltip {
+    opacity: 1;
+}
+
 .contact-form input,
 .contact-form textarea {
     padding: 0.75rem 1rem;
@@ -708,7 +829,6 @@ footer p {
     color: var(--primary);
 }
 
-/* Mobile Responsive: Chhoti screen par wapas center/column ho jaye */
 @media (max-width: 600px) {
     footer {
         flex-direction: column;
@@ -716,6 +836,7 @@ footer p {
         text-align: center;
     }
 }
+
 /* Responsive */
 @media (max-width: 900px) {
     .hero {

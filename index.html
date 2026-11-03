@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rohit Kumar | AI & Python Developer</title>
-    <!-- Open Graph / Meta Preview -->
     <meta
       name="description"
       content="Rohit Kumar - AI & Python Developer specializing in GenAI, RAG pipelines, and Computer Vision."
@@ -16,12 +15,10 @@
     />
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="style.css" />
-    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
@@ -49,9 +46,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
       <div class="hero-content">
-        <!-- <div class="status-badge">
-          <span class="pulse-dot"></span> Available for Opportunities
-        </div> -->
+
         <a href="#contact" class="status-badge hire-badge">
                 <span class="pulse-dot"></span>
                 <span>Open for Full-Time Roles • <strong>Hire Me</strong></span>
@@ -68,15 +63,12 @@
           applications.
         </p>
        <div class="hero-buttons">
-                <!-- Hire Me / Quick Contact -->
                 <a href="#contact" class="btn btn-primary">
                     <i class="fas fa-briefcase"></i> Hire Me
                 </a>
-                <!-- Resume Download -->
                 <a href="Rohit_Kumar_Resume.pdf" download="Rohit_Kumar_Resume.pdf" class="btn btn-secondary">
                     <i class="fas fa-file-download"></i> Resume
                 </a>
-                <!-- Projects -->
                 <a href="#projects" class="btn btn-secondary">
                     <i class="fas fa-code"></i> Projects
                 </a>
@@ -248,12 +240,11 @@
             ></a>
           </div>
           <h3>Enterprise Offline RAG & Document Intelligence</h3>
-          <p  >
-            100% offline, privacy-compliant RAG system with zero data leakage
-            using local Ollama (Llama 3) and LangChain. Engineered PDF chunking
-            pipeline storing 768-dim embeddings in persistent ChromaDB with
-            multi-turn conversational memory.
-          </p>
+          <ul class="project-highlights">
+            <li><i class="fas fa-check-circle"></i> 100% offline & privacy-compliant RAG architecture using local <strong>Ollama (Llama 3)</strong>.</li>
+            <li><i class="fas fa-check-circle"></i> PDF chunking pipeline generating 768-dim embeddings in persistent <strong>ChromaDB</strong>.</li>
+            <li><i class="fas fa-check-circle"></i> Integrated multi-turn conversational memory with zero external API dependencies.</li>
+          </ul>
           <div class="tags">
             <span>FastAPI</span>
             <span>LangChain</span>
@@ -275,12 +266,11 @@
             ></a>
           </div>
           <h3>Crop Disease Detection & Prevention</h3>
-          <p  >
-            Trained a deep CNN model achieving 94%+ validation accuracy across
-            20+ plant disease classes using TensorFlow. Built a geo-targeted
-            advisory module providing location-based seasonal prevention tips
-            and remedies.
-          </p>
+          <ul class="project-highlights">
+            <li><i class="fas fa-check-circle"></i> Deep CNN model built with <strong>TensorFlow</strong> achieving <strong>94%+ validation accuracy</strong> across 20+ plant disease classes.</li>
+            <li><i class="fas fa-check-circle"></i> Geo-targeted advisory module delivering location-based seasonal prevention tips.</li>
+            <li><i class="fas fa-check-circle"></i> Full-stack architecture integrated with Django backend and relational MySQL storage.</li>
+          </ul>
           <div class="tags">
             <span>Python</span>
             <span>Django</span>
@@ -302,12 +292,11 @@
             ></a>
           </div>
           <h3>Smart Parking System Using AI</h3>
-          <p  >
-            Architected an Automatic Number Plate Recognition (ANPR) pipeline
-            using YOLOv8 and Tesseract OCR, reducing check-in latency by ~60%.
-            Features RBAC employee authentication and automated dynamic PDF
-            receipt generation.
-          </p>
+          <ul class="project-highlights">
+            <li><i class="fas fa-check-circle"></i> Automatic Number Plate Recognition (ANPR) pipeline engineered using <strong>YOLOv8</strong> and <strong>Tesseract OCR</strong>.</li>
+            <li><i class="fas fa-check-circle"></i> Streamlined slot management, reducing vehicle check-in latency by <strong>~60%</strong>.</li>
+            <li><i class="fas fa-check-circle"></i> Implemented RBAC staff authentication and dynamic PDF receipt generation.</li>
+          </ul>
           <div class="tags">
             <span>YOLOv8</span>
             <span>OpenCV</span>
@@ -390,10 +379,17 @@
             Feel free to reach out for job opportunities, project
             collaborations, or tech discussions.
           </p>
-          <div class="contact-detail">
-            <i class="fas fa-envelope"></i>
-            <span>im.rohit.kumar.078@gmail.com</span>
-          </div>
+          <div class="contact-item">
+    <i class="fas fa-envelope"></i>
+    <div class="email-copy-wrapper">
+        <a href="mailto:im.rohit.kumar.078@gmail.com" class="email-link" id="email-text">im.rohit.kumar.078@gmail.com</a>
+        <button type="button" class="copy-btn" id="copy-email-btn" title="Copy to clipboard">
+            <i class="far fa-copy" id="copy-icon"></i>
+            <span class="copy-tooltip" id="copy-tooltip">Copy</span>
+        </button>
+    </div>
+</div>
+ 
           <div class="contact-detail">
             <i class="fas fa-phone-alt"></i>
             <span>+91 9459948067</span>

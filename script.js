@@ -7,7 +7,6 @@ if (mobileMenu && navList) {
         navList.classList.toggle('active');
     });
 
-    // Close Mobile Menu when clicking a nav link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navList.classList.remove('active');
@@ -15,7 +14,6 @@ if (mobileMenu && navList) {
     });
 }
 
-// Typing Text Effect for Headers / Roles
 const roles = [
     "Generative AI & LLMs",
     "Computer Vision & Deep Learning",
@@ -93,11 +91,11 @@ if (contactForm) {
             const result = await response.json();
 
             if (response.status === 200) {
-                resultText.style.color = '#4ade80'; // Green color
+                resultText.style.color = '#4ade80'; 
                 resultText.innerText = 'Message sent successfully! Check your email.';
                 contactForm.reset();
             } else {
-                resultText.style.color = '#f87171'; // Red color
+                resultText.style.color = '#f87171';
                 resultText.innerText = result.message || 'Something went wrong. Please try again.';
             }
         } catch (error) {
@@ -136,3 +134,28 @@ async function fetchLastUpdated() {
 }
 
 fetchLastUpdated();
+
+
+const copyBtn = document.getElementById('copy-email-btn');
+const emailText = document.getElementById('email-text');
+const copyIcon = document.getElementById('copy-icon');
+const copyTooltip = document.getElementById('copy-tooltip');
+
+if (copyBtn && emailText) {
+    copyBtn.addEventListener('click', () => {
+        const email = emailText.innerText.trim();
+        navigator.clipboard.writeText(email).then(() => {
+            copyIcon.className = 'fas fa-check';
+            copyIcon.style.color = '#34d399';
+            copyTooltip.innerText = 'Copied!';
+            copyTooltip.style.opacity = '1';
+
+            setTimeout(() => {
+                copyIcon.className = 'far fa-copy';
+                copyIcon.style.color = '';
+                copyTooltip.innerText = 'Copy';
+                copyTooltip.style.opacity = '';
+            }, 2000);
+        });
+    });
+}
